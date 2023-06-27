@@ -1,5 +1,5 @@
 local M = {}
-local plugmap = require ('conf/plugins')
+local plugins = require ('conf/plugins')
 
 -- initialise lazy, and then pass in our current plugins table 
 function init()
@@ -15,7 +15,7 @@ function init()
     }
   end
   vim.opt.rtp:prepend(lazypath)
-  require("lazy").setup(plugmap)
+  require("lazy").setup(plugins)
 end
 
 M.init = init

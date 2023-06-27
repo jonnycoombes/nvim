@@ -2,6 +2,9 @@
 -- contained within imported modules above
 return {
   {
+    "tpope/vim-fugitive",
+  },
+  {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
@@ -21,7 +24,7 @@ return {
       vim.o.timeoutlen = 300
       require("which-key").setup {
         -- initialise key bindings lazily
-        require('conf.which-keys').init(),
+        require("conf.which-keys").init(),
       }
     end,
   },
@@ -48,7 +51,27 @@ return {
     end,
     config = function(_, opts)
       require("mason").setup(opts)
-      require('conf.mason').init()
+      require("conf.mason").init()
     end,
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "saadparwaiz1/cmp_luasnip",
+      "hrsh7th/cmp-nvim-lua",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+    },
+    opts = function()
+      return require("conf.cmp").options
+    end,
+    config = function(_, opts)
+      require("cmp").setup(opts)
+    end,
+  },
+  {
+    "L3MON4D3/LuaSnip",
+    version = "1.2.1", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
   },
 }

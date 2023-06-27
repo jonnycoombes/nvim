@@ -1,4 +1,4 @@
-local plugins = require('plugins')
+local boot = require('boot')
 
 -- set global options 
 vim.o.number = true
@@ -9,4 +9,4 @@ vim.o.hlsearch = true
 vim.g.mapleader = ','
 
 -- initialise plugins
-plugins.init()
+boot.init()
