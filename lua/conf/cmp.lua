@@ -2,11 +2,6 @@ local M = {}
 
 local cmp = require "cmp"
 
-local field_arrangement = {
-  atom = { "kind", "abbr", "menu" },
-  atom_colored = { "kind", "abbr", "menu" },
-}
-
 local function border(hl_name)
   return {
     { "╭", hl_name },
@@ -20,7 +15,7 @@ local function border(hl_name)
   }
 end
 
-options = {
+local options = {
   completion = {
     completeopt = "menu,menuone",
   },
