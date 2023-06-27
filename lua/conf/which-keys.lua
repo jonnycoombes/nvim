@@ -7,10 +7,10 @@ local options = {}
 function init()
   local wk = require "which-key"
   wk.register({
-    t = {
-      name = "Telescope", -- optional group name
-      f = { "<cmd>Telescope find_files<cr>", "Find File", noremap = false },
-      r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File", noremap = false },
+    f = {
+      name = "Find", -- optional group name
+      f = { "<cmd>Telescope find_files<cr>", "File", noremap = false },
+      r = { "<cmd>Telescope oldfiles<cr>", "Recents", noremap = false },
       b = { "<cmd>Telescope buffers<cr>", "Buffers", noremap = false },
     },
     T = {

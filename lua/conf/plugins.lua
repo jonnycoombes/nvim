@@ -79,5 +79,19 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    opts = function() end,
+    config = function(_, opts)
+      require("conf.lsp").init()
+    end,
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { 
+			"nvim-tree/nvim-web-devicons"
+		},
+		opts = function() end,
+		config = function(_, opts)
+			require('conf.lualine').init()
+		end
   },
 }
