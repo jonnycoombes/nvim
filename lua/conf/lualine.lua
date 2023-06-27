@@ -1,6 +1,6 @@
 local M = {}
 
-config = {
+local config = {
   options = {
     icons_enabled = true,
     theme = 'gruvbox',
