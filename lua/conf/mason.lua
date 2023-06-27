@@ -35,12 +35,12 @@ local options = {
 }
 
 function init()
+  require("mason").setup(options)
   vim.api.nvim_create_user_command("MasonInstallAll", function()
     vim.cmd("MasonInstall " .. table.concat(options.ensure_installed, " "))
   end, {})
 end
 
-M.options = options
 M.init = init
 
 return M

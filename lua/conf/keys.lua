@@ -5,12 +5,14 @@ local options = {}
 
 -- called during plugin setup
 local function init()
+  vim.o.timeout = true
+  vim.o.timeoutlen = 300
   local wk = require "which-key"
 
   -- top level mappings
   wk.register({
     T = { "<cmd>Telescope<cr>", "Telescope" },
-    F = { "<cmd>NvimTreeFocus<cr>", "Focus Tree" },
+    E = { "<cmd>NvimTreeFocus<cr>", "Focus Tree" },
     C = { "<cmd>checkhealth<cr>", "Check Health" },
   }, { prefix = "<leader>" })
 

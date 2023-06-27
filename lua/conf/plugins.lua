@@ -16,12 +16,7 @@ return {
     "folke/which-key.nvim",
     keys = { "<leader>", '"', "'", "`", "c", "v", "g" },
     lazy = true,
-    opts = function()
-      return require("conf.keys").options
-    end,
-    config = function(_, opts)
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
+    config = function(_)
       require("which-key").setup {
         -- initialise key bindings lazily
         require("conf.keys").init(),
@@ -46,11 +41,7 @@ return {
   {
     "williamboman/mason.nvim",
     cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
-    opts = function()
-      return require("conf.mason").options
-    end,
-    config = function(_, opts)
-      require("mason").setup(opts)
+    config = function(_)
       require("conf.mason").init()
     end,
   },
@@ -63,11 +54,8 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
     },
-    opts = function()
-      return require("conf.cmp").options
-    end,
-    config = function(_, opts)
-      require("cmp").setup(opts)
+    config = function(_)
+      require("conf.cmp").init()
     end,
   },
   {
@@ -79,8 +67,7 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    opts = function() end,
-    config = function(_, opts)
+    config = function(_)
       require("conf.lsp").init()
     end,
   },
@@ -89,10 +76,20 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-    opts = function() end,
-    config = function(_, opts)
+    config = function(_)
       require("conf.lualine").init()
     end,
   },
-  {},
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function(_)
+      require("conf.gitsigns").init()
+    end,
+  },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		config = function(_)
+		end
+	}
 }
