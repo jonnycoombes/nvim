@@ -41,7 +41,7 @@ local config = {
   extensions = {}
 }
 
-function init()
+local function init()
 	require('lualine').setup(config)
 end
 

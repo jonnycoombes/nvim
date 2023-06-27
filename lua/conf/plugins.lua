@@ -17,14 +17,14 @@ return {
     keys = { "<leader>", '"', "'", "`", "c", "v", "g" },
     lazy = true,
     opts = function()
-      return require("conf.which-keys").options
+      return require("conf.keys").options
     end,
     config = function(_, opts)
       vim.o.timeout = true
       vim.o.timeoutlen = 300
       require("which-key").setup {
         -- initialise key bindings lazily
-        require("conf.which-keys").init(),
+        require("conf.keys").init(),
       }
     end,
   },
@@ -94,4 +94,6 @@ return {
 			require('conf.lualine').init()
 		end
   },
+	{
+	},
 }

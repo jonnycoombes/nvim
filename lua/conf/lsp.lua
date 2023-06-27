@@ -34,6 +34,9 @@ function init()
 	lspconfig.rust_analyzer.setup{
 		on_attach = on_attach	
 	}
+	lspconfig.lua_ls.setup{
+		on_attach = on_attach
+	}
 end
 
 M.options= options

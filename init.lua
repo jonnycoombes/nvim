@@ -1,16 +1,19 @@
 local boot = require('boot')
+local options = vim.o
+local globals = vim.g
 
 -- set global options 
-vim.o.number = true
-vim.o.incsearch = true
-vim.o.hlsearch = true
+options.number = true
+options.incsearch = true
+options.hlsearch = true
 
 -- prefer this to <space> or similar
-vim.g.mapleader = ','
+globals.mapleader = ','
 
 -- spacing etc...
-vim.o.shiftwidth = 2
-vim.o.tabstop = 2
+options.shiftwidth = 2
+options.tabstop = 2
+options.wrap = false
 
--- initialise plugins
+-- boot everything up and get it configured
 boot.init()
