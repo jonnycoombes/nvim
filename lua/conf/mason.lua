@@ -17,7 +17,7 @@ local options = {
       package_pending = " ",
       package_installed = "󰄳 ",
       package_uninstalled = " 󰚌",
-    },
+    },plugins
 
     keymaps = {
       toggle_server_expand = "<CR>",

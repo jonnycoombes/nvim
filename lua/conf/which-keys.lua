@@ -1,9 +1,7 @@
 local M = {}
 
 -- whick-keys related options go here
-local options = {
-
-}
+local options = {}
 
 -- called during plugin setup
 function init()
@@ -11,15 +9,16 @@ function init()
   wk.register({
     t = {
       name = "Telescope", -- optional group name
-      f = { "<cmd>Telescope find_files<cr>", "Find File" }, 
-      r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File", noremap = false}, 
+      f = { "<cmd>Telescope find_files<cr>", "Find File", noremap = false },
+      r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File", noremap = false },
+      b = { "<cmd>Telescope buffers<cr>", "Buffers", noremap = false },
     },
     T = {
-	name = "Tree",
-	t = {"<cmd>NvimTreeToggle<cr>", "Toggle"},
-	o = {"<cmd>NvimTreeOpen<cr>", "Open"},
-	f = {"<cmd>NvimTreeFocus<cr>", "Focus"},
-	c = {"<cmd>NvimTreeClose<cr>", "Close"},
+      name = "Tree",
+      t = { "<cmd>NvimTreeToggle<cr>", "Toggle" },
+      o = { "<cmd>NvimTreeOpen<cr>", "Open" },
+      f = { "<cmd>NvimTreeFocus<cr>", "Focus" },
+      c = { "<cmd>NvimTreeClose<cr>", "Close" },
     },
   }, { prefix = "<leader>" })
 end

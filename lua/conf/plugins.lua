@@ -74,4 +74,10 @@ return {
     "L3MON4D3/LuaSnip",
     version = "1.2.1", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
   },
+  {
+    "williamboman/mason-lspconfig.nvim",
+  },
+  {
+    "neovim/nvim-lspconfig",
+  },
 }
