@@ -28,7 +28,7 @@ options = {
 
   window = {
     completion = {
-      side_padding = 1, 
+      side_padding = 3, 
       winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel",
       scrollbar = false,
     },
