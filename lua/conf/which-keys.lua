@@ -1,5 +1,11 @@
 local M = {}
 
+-- whick-keys related options go here
+local options = {
+
+}
+
+-- called during plugin setup
 function init()
   local wk = require "which-key"
   wk.register({
@@ -19,5 +25,6 @@ function init()
 end
 
 M.init = init
+M.options = options
 
 return M

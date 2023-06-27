@@ -1,6 +1,3 @@
--- which-key is used to create default key bindings
-local keymaps = require "conf/keymap"
-
 -- a table of lazy plugins. Each plugin may have additional configuration
 -- contained within imported modules above
 return {
@@ -16,12 +13,15 @@ return {
     "folke/which-key.nvim",
     keys = { "<leader>", '"', "'", "`", "c", "v", "g" },
     lazy = true,
-    config = function()
+    opts = function()
+      return require("conf.which-keys").options
+    end,
+    config = function(_, opts)
       vim.o.timeout = true
       vim.o.timeoutlen = 300
       require("which-key").setup {
         -- initialise key bindings lazily
-        keymaps.init(),
+        require('conf.which-keys').init(),
       }
     end,
   },
@@ -38,6 +38,17 @@ return {
     },
     config = function()
       require("nvim-tree").setup {}
+    end,
+  },
+  {
+    "williamboman/mason.nvim",
+    cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
+    opts = function()
+      return require("conf.mason").options
+    end,
+    config = function(_, opts)
+      require("mason").setup(opts)
+      require('conf.mason').init()
     end,
   },
 }
