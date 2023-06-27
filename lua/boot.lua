@@ -1,7 +1,7 @@
 local M = {}
-local plugins = require ('conf/plugins')
+local plugins = require "conf/plugins"
 
--- initialise lazy, and then pass in our current plugins table 
+-- initialise lazy, and then pass in our current plugins table
 function init()
   local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
   if not vim.loop.fs_stat(lazypath) then

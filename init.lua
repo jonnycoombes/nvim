@@ -1,14 +1,14 @@
-local boot = require('boot')
+local boot = require "boot"
 local options = vim.o
 local globals = vim.g
 
--- set global options 
+-- set global options
 options.number = true
 options.incsearch = true
 options.hlsearch = true
 
 -- prefer this to <space> or similar
-globals.mapleader = ','
+globals.mapleader = ","
 
 -- spacing etc...
 options.shiftwidth = 2

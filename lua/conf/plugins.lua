@@ -86,14 +86,13 @@ return {
   },
   {
     "nvim-lualine/lualine.nvim",
-    dependencies = { 
-			"nvim-tree/nvim-web-devicons"
-		},
-		opts = function() end,
-		config = function(_, opts)
-			require('conf.lualine').init()
-		end
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    opts = function() end,
+    config = function(_, opts)
+      require("conf.lualine").init()
+    end,
   },
-	{
-	},
+  {},
 }

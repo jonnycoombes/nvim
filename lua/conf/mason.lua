@@ -2,13 +2,13 @@ local M = {}
 
 -- mason related options
 local options = {
-	-- used by custom command to install defaults
+  -- used by custom command to install defaults
   ensure_installed = {
     "lua-language-server",
     "rust-analyzer",
     "codelldb",
-    "chrome-debug-adapter"
-  }, 
+    "chrome-debug-adapter",
+  },
 
   PATH = "skip",
 
@@ -17,7 +17,7 @@ local options = {
       package_pending = " ",
       package_installed = "󰄳 ",
       package_uninstalled = " 󰚌",
-    },plugins
+    },
 
     keymaps = {
       toggle_server_expand = "<CR>",

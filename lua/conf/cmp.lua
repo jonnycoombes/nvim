@@ -1,12 +1,11 @@
 local M = {}
 
-local cmp = require("cmp")
+local cmp = require "cmp"
 
 local field_arrangement = {
   atom = { "kind", "abbr", "menu" },
   atom_colored = { "kind", "abbr", "menu" },
 }
-
 
 local function border(hl_name)
   return {
@@ -28,7 +27,7 @@ options = {
 
   window = {
     completion = {
-      side_padding = 3, 
+      side_padding = 3,
       winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel",
       scrollbar = false,
     },
@@ -89,9 +88,7 @@ options = {
   },
 }
 
-function init()
-
-end
+function init() end
 
 M.options = options
 M.init = init
