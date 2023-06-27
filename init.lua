@@ -1,5 +1,4 @@
 local plugins = require('plugins')
-local mappings = require('mappings')
 
 -- set global options 
 vim.o.number = true
@@ -11,5 +10,3 @@ vim.g.mapleader = ','
 
 -- initialise plugins
 plugins.init()
-
--- initialise key mappings
