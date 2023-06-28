@@ -1,9 +1,19 @@
 -- a table of lazy plugins. Each plugin may have additional configuration
 -- contained within imported modules above
+
 return {
+  -- git related
   {
     "tpope/vim-fugitive",
   },
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function(_)
+      require("conf.gitsigns").init()
+    end,
+  },
+
+  -- some themeing
   {
     "folke/tokyonight.nvim",
     lazy = false,
@@ -12,6 +22,8 @@ return {
       vim.cmd [[colorscheme tokyonight]]
     end,
   },
+
+  -- used for most user-defined key maps/bindings
   {
     "folke/which-key.nvim",
     keys = { "<leader>", '"', "'", "`", "c", "v", "g" },
@@ -23,11 +35,22 @@ return {
       }
     end,
   },
+
+  -- it's a fucking must have
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.1",
     dependencies = { "nvim-lua/plenary.nvim" },
   },
+
+  -- here comes...
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {},
+  },
+
+  -- nice tree, friendly tree
   {
     "nvim-tree/nvim-tree.lua",
     version = "*",
@@ -38,6 +61,8 @@ return {
       require("nvim-tree").setup {}
     end,
   },
+
+  -- wrangle those fucking LSPs
   {
     "williamboman/mason.nvim",
     cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
@@ -45,6 +70,17 @@ return {
       require("conf.mason").init()
     end,
   },
+  {
+    "williamboman/mason-lspconfig.nvim",
+  },
+  {
+    "neovim/nvim-lspconfig",
+    config = function(_)
+      require("conf.lsp").init()
+    end,
+  },
+
+  -- completion and snips
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -60,17 +96,10 @@ return {
   },
   {
     "L3MON4D3/LuaSnip",
-    version = "1.2.1", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    version = "1.2.1",
   },
-  {
-    "williamboman/mason-lspconfig.nvim",
-  },
-  {
-    "neovim/nvim-lspconfig",
-    config = function(_)
-      require("conf.lsp").init()
-    end,
-  },
+
+  -- status diddlin'
   {
     "nvim-lualine/lualine.nvim",
     dependencies = {
@@ -80,16 +109,17 @@ return {
       require("conf.lualine").init()
     end,
   },
+
+  -- for parsing and generally being supportive
   {
-    "lewis6991/gitsigns.nvim",
-    config = function(_)
-      require("conf.gitsigns").init()
-    end,
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function(_) end,
   },
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		config = function(_)
-		end
-	}
+
+  -- what every old person wants
+  {
+    "easymotion/vim-easymotion",
+    lazy = false,
+  },
 }

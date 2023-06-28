@@ -8,6 +8,7 @@ local options = {
     "rust-analyzer",
     "codelldb",
     "chrome-debug-adapter",
+		"typescript-language-server"
   },
 
   PATH = "skip",

@@ -6,7 +6,7 @@ local options = {}
 -- called during plugin setup
 local function init()
   vim.o.timeout = true
-  vim.o.timeoutlen = 300
+  vim.o.timeoutlen = 100
   local wk = require "which-key"
 
   -- top level mappings
@@ -14,6 +14,7 @@ local function init()
     T = { "<cmd>Telescope<cr>", "Telescope" },
     E = { "<cmd>NvimTreeFocus<cr>", "Focus Tree" },
     C = { "<cmd>checkhealth<cr>", "Check Health" },
+		W = { "<cmd>TroubleToggle<cr>", "Trouble" },
   }, { prefix = "<leader>" })
 
   -- second level mappings
@@ -33,6 +34,7 @@ local function init()
       c = { "<cmd>NvimTreeClose<cr>", "Close" },
     },
   }, { prefix = "<leader>" })
+
 end
 
 M.init = init

@@ -30,12 +30,21 @@ options = {}
 
 function init()
   local lspconfig = require "lspconfig"
+
+	-- rust
   lspconfig.rust_analyzer.setup {
     on_attach = on_attach,
   }
+
+	-- lua
   lspconfig.lua_ls.setup {
     on_attach = on_attach,
   }
+
+	-- typescript
+	lspconfig.tsserver.setup {
+		on_attach = on_attach,
+	}
 end
 
 M.options = options
