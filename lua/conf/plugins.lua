@@ -2,10 +2,17 @@
 -- contained within imported modules above
 
 return {
+
+  -- colour schemes
+  {
+    "rebelot/kanagawa.nvim",
+  },
+
   -- git related
   {
     "tpope/vim-fugitive",
   },
+
   {
     "lewis6991/gitsigns.nvim",
     config = function(_)
@@ -35,6 +42,9 @@ return {
       }
     end,
   },
+
+  -- get some completion on neovim internals etc...
+  { "folke/neodev.nvim", opts = {} },
 
   -- it's a fucking must have
   {
@@ -80,6 +90,17 @@ return {
     end,
   },
 
+  -- DAP (Debug Adapter Protocol)
+  {
+    "mfussenegger/nvim-dap",
+    config = function(_)
+      require("conf.dap").init()
+    end,
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+  },
+
   -- completion and snips
   {
     "hrsh7th/nvim-cmp",
@@ -121,5 +142,13 @@ return {
   {
     "easymotion/vim-easymotion",
     lazy = false,
+  },
+
+  -- Rust tools
+  {
+    "simrat39/rust-tools.nvim",
+		config = function(_)
+			require('conf.rust-tools').init()
+		end
   },
 }

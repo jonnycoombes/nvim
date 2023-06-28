@@ -17,3 +17,6 @@ options.wrap = false
 
 -- boot everything up and get it configured
 boot.init()
+
+-- set the colour scheme
+vim.cmd("colorscheme kanagawa")
