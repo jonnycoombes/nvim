@@ -84,7 +84,7 @@ local options = {
 }
 
 function init()
-	require("cmp").setup(options)
+  require("cmp").setup(options)
 end
 
 M.init = init

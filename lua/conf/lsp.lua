@@ -2,7 +2,7 @@ local M = {}
 
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+  --vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -26,25 +26,28 @@ local on_attach = function(client, bufnr)
   end, bufopts)
 end
 
-options = {}
+local options = {}
 
 function init()
   local lspconfig = require "lspconfig"
-
-	-- rust
-  --lspconfig.rust_analyzer.setup {
-  --  on_attach = on_attach,
-  --}
-
-	-- lua
-  lspconfig.lua_ls.setup {
+  local capabilities = require("cmp_nvim_lsp").default_capabilities()
+  -- rust
+  lspconfig.rust_analyzer.setup {
     on_attach = on_attach,
+    capabilities = capabilities,
   }
 
-	-- typescript
-	lspconfig.tsserver.setup {
-		on_attach = on_attach,
-	}
+  -- lua
+  lspconfig.lua_ls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+
+  -- typescript
+  lspconfig.tsserver.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
 end
 
 M.options = options

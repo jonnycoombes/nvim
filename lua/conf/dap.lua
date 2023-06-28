@@ -43,7 +43,7 @@ local function init_codelldb()
       program = function()
         return vim.fn.input("Path: ", vim.fn.getcwd() .. "/", "file")
       end,
-			args = {"--print"},
+			args = {},
       cwd = "${workspaceFolder}",
       stopOnEntry = false,
     },

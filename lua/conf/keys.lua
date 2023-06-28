@@ -4,7 +4,7 @@ local M = {}
 local options = {}
 
 -- called during plugin setup
-local function init()
+function init()
   vim.o.timeout = true
   vim.o.timeoutlen = 100
   local wk = require "which-key"
@@ -33,7 +33,12 @@ local function init()
       f = { "<cmd>NvimTreeFocus<cr>", "Focus" },
       c = { "<cmd>NvimTreeClose<cr>", "Close" },
     },
-  }, { prefix = "<leader>" })
+		r = {
+			name = "Rust",
+			h = { "<cmd>RustHoverActions<cr><cmd>RustHoverActions<cr>", "Hover Actions" },
+			c = { "<cmd>RustCodeAction<cr>", "Code Actions" },
+		},
+  }, { prefix = "<leader>"})
 
 end
 
