@@ -19,4 +19,4 @@ options.wrap = false
 boot.init()
 
 -- set the colour scheme
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme catppuccin")

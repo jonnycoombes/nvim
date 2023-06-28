@@ -4,9 +4,8 @@
 return {
 
   -- colour schemes
-  {
-    "rebelot/kanagawa.nvim",
-  },
+  { "rebelot/kanagawa.nvim", name = "kanagawa", priority = 1000},
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
   -- git related
   {
@@ -147,8 +146,8 @@ return {
   -- Rust tools
   {
     "simrat39/rust-tools.nvim",
-		config = function(_)
-			require('conf.rust-tools').init()
-		end
+    config = function(_)
+      require("conf.rust-tools").init()
+    end,
   },
 }
