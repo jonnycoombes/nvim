@@ -8,7 +8,9 @@ local options = {
     "rust-analyzer",
     "codelldb",
     "chrome-debug-adapter",
-		"typescript-language-server"
+		"typescript-language-server",
+		"marksman",
+		"markdown-toc"
   },
 
   PATH = "skip",

@@ -4,7 +4,7 @@
 return {
 
   -- colour schemes
-  { "rebelot/kanagawa.nvim", name = "kanagawa", priority = 1000},
+  { "rebelot/kanagawa.nvim", name = "kanagawa", priority = 1000 },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
   -- git related
@@ -117,6 +117,9 @@ return {
   {
     "L3MON4D3/LuaSnip",
     version = "1.2.1",
+    config = function(_)
+      require("luasnip.loaders.from_lua").load()
+    end,
   },
 
   -- status diddlin'
@@ -149,5 +152,11 @@ return {
     config = function(_)
       require("conf.rust-tools").init()
     end,
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+		config = function(_)
+			 vim.fn["mkdp#util#install"]() 
+		 end
   },
 }

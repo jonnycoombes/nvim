@@ -1,8 +1,6 @@
 local M = {}
 
 local on_attach = function(client, bufnr)
-  -- Enable completion triggered by <c-x><c-o>
-  --vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -45,6 +43,12 @@ function init()
 
   -- typescript
   lspconfig.tsserver.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+
+  -- markdown
+  lspconfig.marksman.setup {
     on_attach = on_attach,
     capabilities = capabilities,
   }
