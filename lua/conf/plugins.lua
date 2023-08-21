@@ -153,10 +153,15 @@ return {
       require("conf.rust-tools").init()
     end,
   },
+
+	-- markdown preview
   {
     "iamcco/markdown-preview.nvim",
 		config = function(_)
 			 vim.fn["mkdp#util#install"]() 
 		 end
   },
+	{
+		"iamcco/mathjax-support-for-mkdp"
+	},
 }
