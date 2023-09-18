@@ -52,6 +52,12 @@ function init()
     on_attach = on_attach,
     capabilities = capabilities,
   }
+
+	-- tailwind
+	lspconfig.tailwindcss.setup {
+		on_attach = on_attach,
+	 capabilities = capabilities
+	 }
 end
 
 M.options = options
